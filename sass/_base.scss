@@ -1,0 +1,130 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+body {
+    font-family: "Oswald", sans-serif;
+    font-weight: 400;
+    line-height: 1.6;
+    letter-spacing: 0.6px;
+    // min-height: 100vh;
+    color: var(--color-w);
+    font-size: 16px;
+    // background-image: linear-gradient(to right bottom, var(--color-primary-light), var(--color-primary-dark));
+}
+
+ul {
+    li {
+        list-style: none;
+
+        a {
+            text-decoration: none;
+        }
+    }
+}
+
+
+html {
+
+    scroll-behavior: smooth;
+
+    box-sizing: border-box;
+    font-size: 62.5%;
+}
+
+:root {
+    
+    --color-primary:#f04670 ;
+    --color-primary-light:#f04670 ;
+    --color-primary-dark:#C6395C;
+
+    --color-w: #fff;
+    --color-b: #000;
+
+    //light gray
+    --color-gray-light-1: #faf9f9;
+    --color-gray-light-2: #f4f2f2;
+    --color-gray-light-3: #f0eeee;
+    --color-gray-light-4: #ccc;
+
+    //dark grey
+    --color-gray-dark-1: #333;
+    --color-gray-dark-2: #777;
+    --color-gray-dark-3: #999;
+
+    //box-shadow
+    --shadow-dark: 0 2rem 6rem rgba(0, 0, 0, .03);
+    --shadow-light: 0 2rem 5rem rgba(0, 0, 0, .06);
+
+    //border bottom
+    --line: 1px solid var(--color-gray-light-2);
+
+}
+
+
+//font variables
+$base-font-size:16px;
+$sm_font-size:$base-font-size * 0.8;
+$lg_font-size:$base-font-size * 1.4;
+$xl_font-size:$base-font-size * 1.8;
+
+//map
+$Font_size:("sm": $sm_font-size,
+    "lg": $lg_font-size,
+    "xl": $xl_font-size,
+);
+
+@each $size_name,
+$size_value in $Font_size {
+    .text {
+        &-#{$size_name} {
+            font-size: $size_value;
+        }
+    }
+}
+
+$Text-positioning: ("center": center,
+    "rigth": right,
+);
+
+@each $position_name,
+$position_value in $Text-positioning {
+    .#{$position_name} {
+        text-align: $position_value;
+
+    }
+}
+
+
+//flex
+@mixin flex($direction:row) {
+    display: flex;
+    flex-direction: $direction;
+}
+
+
+i {
+    color: var(--color-primary);
+}
+
+
+
+// /responsive variables
+$ipad-pro:1024px;
+$ipad:768px;
+$iphone-x:375px;
+
+
+//responsive
+@mixin responsive($display) {
+    @media (max-width:$display) {
+        @content;
+    }
+}

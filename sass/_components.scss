@@ -1,0 +1,45 @@
+
+
+.cta {
+    margin-top: 4rem;
+
+    .btn {
+        width: 57%;
+        height: 65px;
+
+        overflow: hidden;
+        cursor: pointer;
+        font-size: 2rem;
+        font-weight: 300;
+        text-transform: capitalize;
+        border-radius: 10rem;
+        // border: none;
+        transition: background-color .2s;
+        border: 2px solid var(--color-primary);
+
+        color: var(--color-w);
+        background-color: var(--color-primary);
+
+        &-icon {
+            color: white;
+            margin-right: 1.5rem;
+            font-size: 2.5rem;
+            z-index: 50;
+        }
+
+        &>* {
+            display: inline-block;
+        }
+
+        &:hover {
+            background: transparent;
+            color: var(--color-primary);
+        }
+     
+        &:hover .btn-icon{
+            color: var(--color-primary);
+        }
+   
+    }
+
+}
